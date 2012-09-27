@@ -10,21 +10,19 @@ LIBS=-lpthread -lncursesw
 WALL=-Wall
 INSPATH=/usr/local/ygsnake
 LNNAME=/usr/bin/ygsnake
-MOBJS=${MSOURCES:.c=.o}
-WOBJS=${WSOURCES:.c=.o}
+WOBJS=winsnake.o
+MOBJS=snake.o
 
 INSPATH=/usr/local/ygsnake
 
 ${MAIN_NAME}:${MOBJS} ${WIN_NAME}
-	${CC} -o ${MAIN_NAME} ${LIBS} ${WALL} ${MOBJS}
+	${CC} -o ${MAIN_NAME} ${LIBS} ${WALL} ${MOBJS} module.o
 ${WIN_NAME}:${WOBJS}
-	${CC} -o ${WIN_NAME} ${LIBS} ${WALL} ${WOBJS}
-${MOBJS}:${HEADS}
-%.o:${MSOURCES}
-	${CC} -c $<
+	${CC} -o ${WIN_NAME} ${LIBS} ${WALL} ${WOBJS} module.o
 ${WOBJS}:${HEADS}
-%.o:${WSOURCES}
-	${CC} -c $<
+	${CC} -c ${WSOURCES}
+${MOBJS}:${HEADS}
+	${CC} -c ${MSOURCES}
 
 install:
 	mkdir ${INSPATH}
