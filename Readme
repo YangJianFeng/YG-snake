@@ -60,12 +60,19 @@ winsnake.c为图形代码，主要任务根据struct control的数据
 要在con_sfood[2]坐标处打印出食物的字符'$'。
 
 
-最后来说一说是坐标的存放与弹出。YG贪吃蛇用一个队列数据结构（不清楚队列的网友可以在网上查一下）存放坐标数据，队列的主要属性就是先进先出，把蛇头坐标放入队列，下一个蛇头坐标产生时，相对来说上一蛇头坐标就变成了蛇尾，打印新的头坐标，擦除上一个坐标，就能使蛇前进了。这正和队列的属性相通，放入新的坐标，弹出先前的坐标。如有吃到食物，就只放入新坐标，旧的坐标留着正常状态弹出，这样蛇的长度就能慢慢加长了。
+最后来说一说是坐标的存放与弹出。YG贪吃蛇用一个队列数据结构
+（不清楚队列的网友可以在网上查一下）存放坐标数据，队列的主
+要属性就是先进先出，把蛇头坐标放入队列，下一个蛇头坐标产生时，
+相对来说上一蛇头坐标就变成了蛇尾，打印新的头坐标，擦除上一个
+坐标，就能使蛇前进了。这正和队列的属性相通，放入新的坐标，弹
+出先前的坐标。如有吃到食物，就只放入新坐标，旧的坐标留着正常
+状态弹出，这样蛇的长度就能慢慢加长了。
 
 如有好的建议，或发现BUG请送Email:hunter1x1hunter@sina.com，谢谢
 
 License:
 GNU GPL v2.
-You must accept the GPL v2 License, then you can use this program and the source code.
+You must accept the GPL v2 License, 
+then you can use this program and the source code.
 You can get the GPL v2 License here:
 http://www.gnu.org/licenses/gpl-2.0.html
