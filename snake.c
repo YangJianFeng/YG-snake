@@ -26,8 +26,10 @@ main(void)
 			exit_print("sigprocmask error\n");
 		if (dup2(fd_pipe[0], STDIN_FILENO) < 0)
 			exit_print("dup error\n");
-		if (execl("./snake-gui", "snake-gui", (char *) 0) < 0)
-			exit_print("exec snake-gui error\n");
+		if (execl("/usr/local/ygsnake/snake-gui",
+		    "snake-gui", (char *) 0) < 0) {
+			exit_print("Error,snake-gui file Not find\n");
+		}
 	}
 	close(fd_pipe[0]);
 

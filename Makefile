@@ -27,7 +27,7 @@ ${MOBJS}:${HEADS}
 
 install:
 	mkdir ${INSPATH}
-	cp ${MAIN_NAME} ${WIN_NAME} ${INSPATH}
+	mv ${MAIN_NAME} ${WIN_NAME} ${INSPATH}
 	@ln -s ${INSPATH}/snake ${LNNAME}
 
 clear:
